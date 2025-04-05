@@ -1,0 +1,6 @@
+We want to delete a column from your DataFrame, The best way to delete a column is to use drop with the parameter axis=1 (i.e., the column axis), You can also use a list of column names as the main argument to drop multiple columns at once
+If a column does not have a name (which can sometimes happen), you can drop it by its column index using dataframe.columns, drop is the idiomatic method of deleting a column. An alternative method is del dataframe['Age'],
+which works most of the time but is not recommended because of how it is called within pandas, I recommend that you avoid using pandas’ inplace=True argument. Many pandas methods include an inplace parameter, which when 
+True edits the DataFrame directly. This can lead to problems in more complex data processing pipelines because we are treating the DataFrames as mutable objects (which  they technically are). I recommend treating DataFrames
+as immutable objects. For example In this example, we are not mutating the DataFrame dataframe but instead are making a new DataFrame that is an altered version of dataframe called dataframe_name_dropped. If you treat your
+DataFrames as immutable objects, you will save yourself a lot of headaches down the road.
